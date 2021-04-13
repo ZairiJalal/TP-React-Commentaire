@@ -1,17 +1,32 @@
+// Import the react and the reactDOM libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Comment from './Comment';
+import ApprovalCard from './ApprovalCard'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+// Create a react component
+const App = () => {
+return (
+           <div className="ui container comments">
+             <ApprovalCard >
+               <div>
+                 <h4>Attention !</h4>
+                   Vous êtes sûr ?
+               </div>
+             </ApprovalCard>
+             <ApprovalCard >
+                 <Comment author="Jalal ZAIRI" date=" à 10h30" content="Bonjour tout le monde"/>
+             </ApprovalCard>
+             <ApprovalCard >
+                 <Comment author="Dounia ZAIRI" date=" à 12h30" content="Bonjour "/>
+             </ApprovalCard>
+             <ApprovalCard >
+                 <Comment author="Youssef ZAIRI" date=" à 17h30" content="Hi !"/>
+             </ApprovalCard>
+           </div>
+
 );
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Take the react component and show it on the screen
+ReactDOM.render(<App />, document.getElementById('root'))
